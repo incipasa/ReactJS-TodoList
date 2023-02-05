@@ -1,5 +1,6 @@
 import './App.css';
 import {useState} from 'react';
+import { useRef } from 'react';
 
 function App() {
 
@@ -11,6 +12,10 @@ function App() {
       {
         id:2,
         name: "Take out the trash"
+      },
+      {
+        id:3,
+        name: "Finish doing laundry"
       },
 
   ]
@@ -79,7 +84,7 @@ function EditList({current, lists, setList}) {
 }
 
 function AddList({setList}) {
-  //const nameRef = useRef();
+  const nameRef = useRef();
   function handleSubmit(event) {
     event.preventDefault();
     const name = event.target.elements.name.value;
@@ -90,11 +95,11 @@ function AddList({setList}) {
     setList((prevList) => {
       return prevList.concat(newlist)
     })
-    //nameRef.current.value=""
+    nameRef.current.value=""
   }
   return(
     <><><h1> My to-dos</h1> <form className='addForm' onSubmit={handleSubmit}>
-      <input type="text" name="name" placeholder="Create a new to-do" /*ref={nameRef}*/></input>
+      <input type="text" name="name" placeholder="Create a new to-do" ref={nameRef}></input>
       <button type="submit">Add</button>
     </form></><br></br></>
 

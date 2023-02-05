@@ -13,10 +13,6 @@ function App() {
         name: "Take out the trash"
       },
       {
-        id:3,
-        name: "Finish doing laundry"
-      },
-
   ]
 
   const [lists, setList] = useState(list)

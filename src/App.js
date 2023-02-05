@@ -12,6 +12,7 @@ function App() {
         id:2,
         name: "Take out the trash"
       },
+
   ]
 
   const [lists, setList] = useState(list)
@@ -83,7 +84,7 @@ function AddList({setList}) {
     event.preventDefault();
     const name = event.target.elements.name.value;
     const newlist = {
-      id:3,
+      id: Math.floor(Math.random()*1000),
       name,
     }
     setList((prevList) => {

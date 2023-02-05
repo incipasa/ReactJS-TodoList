@@ -12,7 +12,6 @@ function App() {
         id:2,
         name: "Take out the trash"
       },
-      {
   ]
 
   const [lists, setList] = useState(list)
